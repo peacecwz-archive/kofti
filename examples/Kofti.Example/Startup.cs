@@ -21,7 +21,9 @@ namespace Kofti.Example
         {
             services.Configure<KoftiOptions>(Configuration.GetSection("Kofti"));
             services
-                .AddKofti()
+                .AddKofti();
+            
+            services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
