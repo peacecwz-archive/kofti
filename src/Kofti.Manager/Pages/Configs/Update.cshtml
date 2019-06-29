@@ -1,0 +1,22 @@
+@model ConfigModel
+
+@{
+    ViewBag.Title = "Update Config";
+    Layout = "_Layout";
+}
+
+<h2>Update Config</h2>
+
+<form asp-controller="Configs" asp-action="Update" asp-route-configId="@Model.Id" asp-route-appId="@ViewBag.AppId" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="Value">Value</label>
+        <input asp-for="Value" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IsActive">Is Active</label>
+        <input asp-for="IsActive" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

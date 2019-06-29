@@ -1,0 +1,43 @@
+@model List<ConfigModel>
+
+@{
+    ViewBag.Title = "Configs";
+    Layout = "_Layout";
+}
+
+<h2>Configs</h2>
+<p>
+    <a asp-action="Create" asp-route-appId="@ViewBag.AppId">Create New Config</a>
+</p>
+
+@if (Model != null)
+{
+    <table>
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Key</td>
+            <td>Value</td>
+            <td>Is Active</td>
+            <td>Creation Time</td>
+            <td>More</td>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Key</td>
+                <td>@item.Value</td>
+                <td>@item.IsActive</td>
+                <td>@item.CreatedAt.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Update" asp-route-appId="@item.ApplicationId" asp-route-configId="@item.Id">Update</a>
+                    <a asp-action="Delete" asp-route-appId="@item.ApplicationId" asp-route-configId="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

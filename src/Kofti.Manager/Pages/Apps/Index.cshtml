@@ -1,0 +1,35 @@
+@model List<Kofti.Manager.Models.AppModel>
+
+@{
+    ViewBag.Title = "Apps";
+    Layout = "_Layout";
+}
+
+<h2>Apps</h2>
+
+@if (Model != null)
+{
+    <table>
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Creation Time</td>
+            <td>More</td>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.CreatedAt.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Index" asp-controller="Configs" asp-route-appId="@item.Id">Show Configs</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

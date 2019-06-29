@@ -1,0 +1,17 @@
+@model AppModel
+
+@{
+    ViewBag.Title = "Create App";
+    Layout = "_Layout";
+}
+
+<h2>Create App</h2>
+
+<form asp-controller="Apps" asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="Name">Application Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
