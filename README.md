@@ -30,6 +30,23 @@ dotnet add package Kofti
   }
 ```
 
+4. Inject 'IConfigService' and get config
+
+```
+        private readonly IConfigService _configService;
+        public ValuesController(IConfigService configService)
+        {
+            _configService = configService;
+        }
+
+        [HttpGet("{key}")]
+        public ActionResult<string> Get(string key)
+        {
+            return _configService.GetValue<string>(key, $"Not available config key: '{key}'");
+        }
+
+```
+
 ## Configure Server App (Manuel)
 
 1. Clone this repo and open 'Kofti.Manager' project
