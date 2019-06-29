@@ -1,0 +1,7 @@
+version: '2'
+services:
+    redis:
+      image: 'redis'
+      command: redis-server --requirepass MyP@ssw0rd
+      ports:
+        - '6379:6379'
