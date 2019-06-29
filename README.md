@@ -1,5 +1,5 @@
 # Kofti (Distributed Configuration Manager)
-Configuration Management for ASP.NET Core Applications
+Distributed Configuration Manager for ASP.NET Core Applications
 
 ## Configure Client App
 
@@ -64,6 +64,12 @@ dotnet ef database update
 
 * ASP.NET Core 2.2
 * Redis
+
+## TODO
+
+- [ ] Unit tests
+- [ ] Kofti.Manager refactor and fully dockerize app
+- [ ] More examples and documentation
 
 ## Contribution
 
