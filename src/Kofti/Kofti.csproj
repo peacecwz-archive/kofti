@@ -2,6 +2,33 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
+        <Title>Kofti (Distributed Configuration Manager)</Title>
+        <Authors>PeaceCwz</Authors>
+        <Description>Distributed Configuration Manager for ASP.NET Core Applications</Description>
+        <Copyright>Copyright @2019 Baris Ceviz</Copyright>
+        <PackageProjectUrl>https://github.com/peacecwz/kofti</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/peacecwz/kofti/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/peacecwz/kofti.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>distributed-configuration,asp-net-core,redis,pub-sub</PackageTags>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+      <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>..\..\..\..\..\..\..\.nuget\packages\microsoft.aspnetcore.http.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>..\..\..\..\..\..\..\.nuget\packages\microsoft.extensions.logging.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+        <HintPath>..\..\..\..\..\..\..\.nuget\packages\newtonsoft.json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll</HintPath>
+      </Reference>
+    </ItemGroup>
 
 </Project>
